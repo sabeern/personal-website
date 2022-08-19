@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
 
 <html lang="en">
 <head>
@@ -42,7 +36,6 @@
 
 <header class="navigation fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand font-tertiary h3" href="index.html"><img src="images/logo.png" alt="Myself"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -168,19 +161,36 @@
       <div class="col-12 text-center">
         <h2 class="section-title">Contact Info</h2>
       </div>
+      
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
           <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
+          <!--<form action="#" class="row">-->
+            <form action="#" class="row" method="post" name="contact_form" onsubmit="return contactValidation()">
+              <div class="col-md-12" style="text-align:left;">
+                <span class="text-danger">* required fields </span>
+              </div>
             <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
+              <!--<input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>-->
+              <span id="name_required" class="text-danger">*</span>
+              <input type="text" class="form-control px-0 mb-4" name="cont_name" placeholder="Your Name">
             </div>
             <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
+              <!--<input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>-->
+              <span id="email_required" class="text-danger">*</span>
+              <input type="text" class="form-control px-0 mb-4" name="cont_email" placeholder="Your Email">
+            </div>
+            <div class="col-md-6">
+              <span id="contact_required" class="text-danger">*</span>
+              <input type="text" class="form-control px-0 mb-4" name="cont_phone" placeholder="Mobile Number">
+            </div>
+            <div class="col-md-6">
+              <span id="subject_required" class="text-danger">*</span>
+              <input type="text" class="form-control px-0 mb-4" name="cont_subject" placeholder="Subject">
             </div>
             <div class="col-12">
               <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here" required></textarea>
+                placeholder="Type Message Here"></textarea>
             </div>
             <div class="col-lg-6 col-10 mx-auto">
               <button class="btn btn-primary w-100">send</button>
@@ -228,6 +238,7 @@
 
 <!-- Main Script -->
 <script src="js/script.js"></script>
+<script src="js/validation.js"></script>
 
 </body>
 </html>
