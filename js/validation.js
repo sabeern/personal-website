@@ -10,7 +10,7 @@ function contactValidation() {
         nameErr="Name required";
         msgFlag=1;
     }else if (!name.match(validRegex)) {
-        nameErr="Name required";
+        nameErr="Valied name required";
         msgFlag=1;
     } 
     var validRegex = /^[a-zA-Z0-9.!$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
