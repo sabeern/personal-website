@@ -5,16 +5,20 @@ function contactValidation() {
     let subject=document.contact_form.cont_subject.value;
     let contactNo=document.contact_form.cont_phone.value;
     nameLength=name.trim().length;
+    var validRegex = /^[a-zA-Z ]*$/;
     if(nameLength < 1) {
         nameErr="Name required";
         msgFlag=1;
-    }
-    let atposition=email.indexOf("@");  
-    let dotposition=email.lastIndexOf(".");  
-    if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){    
-          emailErr="Enter a valied email";
+    }else if (!name.match(validRegex)) {
+        nameErr="Name required";
         msgFlag=1;
-              } 
+    } 
+    var validRegex = /^[a-zA-Z0-9.!$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!email.match(validRegex)) {
+        emailErr="Enter a valied email";
+        msgFlag=1;
+    } 
     subLength=subject.trim().length;
     if(subLength < 1) {
         subErr="Subject required";
